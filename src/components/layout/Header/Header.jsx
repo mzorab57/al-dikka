@@ -21,11 +21,11 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full z-50 transition-all duration-300 border-b-2 text-white border-b-gray-500/30 ${
-        isSticky ? "shadow-md bg-black/50 backdrop-blur-lg" : "bg-transparent"
+      className={`fixed w-full z-50 transition-all font-serif text-xl duration-300 border-b-2 text-white border-b-gray-500/30 ${
+        isSticky ? "shadow-md bg-white text-gray-800 backdrop-blur-lg" : ""
       }`}
     >
-      <Navbar />
+      <Navbar  />
     </div>
   );
 };

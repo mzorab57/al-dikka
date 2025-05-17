@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.hero_slider-nav .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.hero_slider-nav .swiper-pagination-bullet-active {
+  background: var(--primary-500);
+  border-color: var(--primary-500);
+  transform: scale(1.25);
+}

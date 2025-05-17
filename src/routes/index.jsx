@@ -9,6 +9,7 @@ import Contact from "../pages/Contact";
 import MattSchool from "../pages/pages/MattSchool";
 import MattFurnishing from "../pages/pages/MattFurnishing";
 import MattModel from "../pages/pages/MattModel";
+import Hero from "../components/Hero/Hero";
 
 const ErrorElement = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -31,12 +32,11 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />}>
-        <Route index element={<Home />} />
+        <Route index element={<Hero />} />
         <Route path="about" element={<About />} />
         <Route path="pages">
-          <Route path="mattschool" element={<MattSchool />} />
-          <Route path="mattfurnishing" element={<MattFurnishing />} />
-          <Route path="mattmodel" element={<MattModel />} />
+          <Route path="projects" element={<MattSchool />} />
+          <Route path="FAQ" element={<MattModel />} />
         </Route>
         <Route path="contact" element={<Contact />} />
       </Route>

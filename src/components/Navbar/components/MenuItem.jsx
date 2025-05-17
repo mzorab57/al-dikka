@@ -49,7 +49,7 @@ const MenuItem = ({ item }) => {
             </svg>
           </span>
           <ul 
-            className="invisible py-2 group-hover:visible mt-7 rounded opacity-0 group-hover:opacity-100 absolute top-full w-72 backdrop-blur-xl border border-gray-600 transition-all duration-300 before:content-[''] before:absolute before:top-[-8px] before:left-8 before:w-4 before:h-4 before:bg-gray-600 before:rotate-45 before:-z-10"
+            className={`invisible py-2 group-hover:visible mt-7 rounded opacity-0 group-hover:opacity-100 absolute  text-white top-full w-72 bg-black backdrop-blur-xl border border-gray-600 transition-all duration-300 before:content-[''] before:absolute before:top-[-8px] before:left-8 before:w-4 before:h-4 before:bg-gray-600 before:rotate-45 before:-z-10`}
             data-aos="fade-up"
             data-aos-duration="500"
           >
@@ -61,7 +61,7 @@ const MenuItem = ({ item }) => {
                   className="block px-6 py-3 text-sm hover:text-primary hover:bg-white/10 transition-all duration-300 rounded"
                 >
                   <div className="flex items-center">
-                    {t(`nav.${child.title}`)}
+                    {t(`${child.title}`)}
                   </div>
                 </Link>
               </li>

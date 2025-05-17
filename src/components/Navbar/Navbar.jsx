@@ -6,9 +6,10 @@ import MenuItem from "./components/MenuItem";
 import MobileMenuItem from "./components/MobileMenuItem";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import navitemlist from "../../dataJson/navitemlist.json";
+// import logo from "../../../public/assets/images/alDikkaLogo";
 // import ContactInfo from "./components/ContactInfo";
 
-const Navbar = () => {
+const Navbar = ({isSticky}) => {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -33,7 +34,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/matt-logo.webp" alt="Logo" className="w-24     scale-150   -translate-y-" />
+            <img src="/assets/images/alDikkaLogo.png" alt="Logo" className="h-16 w-20" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,7 +42,7 @@ const Navbar = () => {
             <ul className="flex space-x-4">
               {navitemlist.map((item, index) => (
                 
-                <MenuItem key={index} item={item} />
+                <MenuItem  item={item}  />
               ))}
             </ul>
           </nav>
