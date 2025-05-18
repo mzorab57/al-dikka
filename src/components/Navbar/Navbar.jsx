@@ -31,7 +31,7 @@ const Navbar = ({isSticky}) => {
   return (
     <nav className="relative ">
       <div className="container mx-auto px-4  ">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-1 ">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img src="/assets/images/alDikkaLogo.png" alt="Logo" className="h-16 w-20" />

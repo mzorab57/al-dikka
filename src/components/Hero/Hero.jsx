@@ -9,32 +9,26 @@ import "swiper/css/pagination";
 const services = [
   {
     title: "Process Engineering",
-    description:
-      "Varius morbi enim nunc faucibus a. Pretium quam vulputate dignissim suspendisse. Tortor vitae purus faucibus ornare. Viverra mauris in aliquam sem fringilla ut morbi",
     image: "/assets/images/bgHome/bg1.jpg",
   },
   {
     title: "Chemistry and Metallurgy",
-    description:
-      "Varius morbi enim nunc faucibus a. Pretium quam vulputate dignissim suspendisse. Tortor vitae purus faucibus ornare. Viverra mauris in aliquam sem fringilla ut morbi",
+    
     image: "/assets/images/bgHome/bg2.jpg",
   },
   {
     title: "Electrical Engineering",
-    description:
-      "Varius morbi enim nunc faucibus a. Pretium quam vulputate dignissim suspendisse. Tortor vitae purus faucibus ornare. Viverra mauris in aliquam sem fringilla ut morbi",
+    
     image: "/assets/images/bgHome/bg3.jpg",
   },
   {
     title: "Specialty Services",
-    description:
-      "Varius morbi enim nunc faucibus a. Pretium quam vulputate dignissim suspendisse. Tortor vitae purus faucibus ornare. Viverra mauris in aliquam sem fringilla ut morbi",
+    
     image: "/assets/images/bgHome/bg4.jpg",
   },
   {
     title: "Renovation Services",
-    description:
-      "Varius morbi enim nunc faucibus a. Pretium quam vulputate dignissim suspendisse. Tortor vitae purus faucibus ornare. Viverra mauris in aliquam sem fringilla ut morbi",
+    
     image: "/assets/images/bgHome/bg5.jpg",
   },
 ];
@@ -44,6 +38,34 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen bg-black overflow-hidden">
+       {/* Sun rays effect */}
+       <div className="absolute inset-0  animate-float  z-10">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute -top-4  -right-10 w-full mt-24 h-1 rounded-full bg-gradient-to-r from-yellow-300/50 via-yellow-200/10 to-transparent"
+                  style={{
+                    transform: `translate(-50%, -50%) rotate(${i * 30}deg)`,
+                    // transform: `translateX(100%, 100%) )`,
+                    transformOrigin: 'center'
+                  }}
+                />
+              ))}
+            </div>
+       <div className="absolute inset-0  animate-float  z-10">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute -top-4  -right-10 w-full mt-[6.4rem] h-2 rounded-full bg-gradient-to-r from-yellow-300/15 via-yellow-200/10 to-transparent"
+                  style={{
+                    transform: `translate(-50%, -50%) rotate(${i * 30}deg)`,
+                    // transform: `translateX(100%, 100%) )`,
+                    transformOrigin: 'center'
+                  }}
+                />
+              ))}
+            </div>
+            
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -83,17 +105,17 @@ const Hero = () => {
           {services.map((service, index) => (
             <SwiperSlide key={index}>
               <div className="relative h-full flex items-center">
-                <div className="container mx-auto px-4 h-full flex flex-col justify-center">
-                  <div className="max-w-3xl  p-8 rounded-lg">
-                    <h2 className="text-gray-300 text-4xl md:text-5xl font-semibold mb-6 drop-shadow-lg">
+                <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center">
+                  <div className="max-w-3xl text-center  p-8 rounded-lg">
+                    <h2 className="text-gray-300 text-4xl md:text-7xl font-semibold mb-6 drop-shadow-lg">
                       Process Engineering
                     </h2>
-                    <p className="text-gray-400 text-base md:text-lg mb-8 drop-shadow-md">
-                      {service.description}
+                    <p className="text-gray-300  text-base md:text-lg mb-8 drop-shadow-md">
+                    Established in 2004, we are a leading multidisciplinary engineering firm in Iraq
                     </p>
                     <a
                       href="single-service.html"
-                      className="inline-block p-[2px]  bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
+                      className="inline-block p-[2px]   bg-yellow-400/20 border border-yellow-400 hover:bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
                     >
                       Service Details
                     </a>
@@ -106,8 +128,8 @@ const Hero = () => {
       </div>
 
       {/* Vertical Navigation */}
-      <div className="hero_slider-nav absolute right-8 top-1/2 transform  translate-y-1/2 flex flex-col space-y-3 z-30" />
 
+      <div className="hero_slider-nav absolute right-5 top-[26.5rem]  transform  translate-y-1/2 flex flex-col space-y-4 z-10" />
       {/* Thumbnails Slider */}
       <div className="absolute bottom-8 left-0 right-0 z-30">
         <div className="container mx-auto px-4">
@@ -166,11 +188,32 @@ const Hero = () => {
           border-radius: 100%;
           cursor: pointer;
           transition: all 0.3s ease;
-          
+          position: relative;
+       
         }
+        
+        .custom-bullet::before {
+          content: '';
+          position: absolute;
+          inset: -4px;
+          border-radius: 100%;
+          border: 2px solid rgba(234, 179, 8, 0.3);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        
+        .custom-bullet:hover::before {
+          opacity: 1;
+        }
+        
         .custom-bullet-active {
           background: #EAB308;
           box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.3);
+        }
+        
+        .custom-bullet-active::before {
+          opacity: 1;
+          border-color: #EAB308;
         }
       `}</style>
     </section>
