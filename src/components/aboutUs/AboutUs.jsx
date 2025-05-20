@@ -1,4 +1,5 @@
 import React from "react";
+import OurStory from "../ourStory/OurStory";
 
 const AboutUs = () => {
   return (
@@ -14,7 +15,7 @@ const AboutUs = () => {
       />
 
       {/* Hero Section */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 py-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 relative">
             {/* Sun rays effect */}
@@ -74,45 +75,7 @@ const AboutUs = () => {
       </div>
 
       {/* Our Story Section */}
-      <div className="bg-gray-50 py-16 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <img
-                src="/assets/images/bgHome/bg3.jpg"
-                alt="Engineering team at work"
-                className="rounded-lg shadow-xl w-full h-auto"
-              />
-            </div>
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
-              <div className="prose prose-lg text-gray-600">
-                <p className="mb-4">
-                  Al-Dikka Engineering Company for Contracting, General Trading,
-                  Preparing and Renting Machinery and Equipment, and Operating
-                  Iraqi Manpower Ltd. is a multidisciplinary firm offering
-                  integrated solutions across engineering, construction,
-                  equipment services, and workforce provision.
-                </p>
-                <p className="mb-4">
-                  We specialize in civil and structural engineering design,
-                  construction supervision, and project management for public
-                  and private sector projects.
-                </p>
-                <p>
-                  We go beyond engineering—supplying and renting heavy
-                  machinery, and operating a large, skilled Iraqi workforce.
-                  Backed by experienced professionals and aligned with
-                  international standards, we provide reliable, cost-effective
-                  services with a focus on quality and safety.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     <OurStory />
 
       {/* Core Values Section */}
       <div className="py-16 bg-gradient-to-b from-gray-50 to-white">

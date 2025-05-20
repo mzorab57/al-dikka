@@ -107,15 +107,15 @@ const Hero = () => {
               <div className="relative h-full flex items-center">
                 <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center">
                   <div className="max-w-3xl text-center  p-8 rounded-lg">
-                    <h2 className="text-gray-300 text-4xl md:text-7xl font-semibold mb-6 drop-shadow-lg">
-                      Process Engineering
+                    <h2 className="text-gray-300 uppercase text-4xl md:text-7xl font-semibold mb-6 drop-shadow-lg">
+                    Engineering Iraq's Future
                     </h2>
-                    <p className="text-gray-300  text-base md:text-lg mb-8 drop-shadow-md">
-                    Established in 2004, we are a leading multidisciplinary engineering firm in Iraq
+                    <p className="text-gray-300 uppercase text-base md:text-lg mb-8 drop-shadow-md">
+                    From Design to Delivery - Your Trusted Partner in Engineering Excellence
                     </p>
                     <a
                       href="single-service.html"
-                      className="inline-block p-[2px]   bg-yellow-400/20 border border-yellow-400 hover:bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
+                      className="inline-block p-[2px] bg-yellow-400/20 border uppercase border-yellow-400 hover:bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
                     >
                       Service Details
                     </a>
