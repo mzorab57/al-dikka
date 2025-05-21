@@ -80,7 +80,7 @@ const AboutUs = () => {
       {/* Core Values Section */}
       <div className="cs-feature-card-wrap lg-gutter-control py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="mb-16 ">
+          <div className="mb-16 text-center flex flex-col justify-center items-center">
             <h2 className="text-6xl font-bold text-gray-900 mb-4 ">
               Our Core Values
             </h2>

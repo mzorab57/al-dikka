@@ -51,7 +51,7 @@ const OurSiteSuport = () => {
   return (
     <section className="">
       <div className="container mx-auto mb-16">
-        <div className=" mb-12  ">
+        <div className=" mb-12 text-center flex flex-col justify-center items-center ">
           <h2 className="text-6xl font-bold text-gray-900 mb-4 w-full">
             Site Support Services
           </h2>

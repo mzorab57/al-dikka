@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const HowWeWork = () => {
+
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setScrollY(window.scrollY);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
   const processSteps = [
     {
       step: 1,
@@ -27,12 +40,16 @@ const HowWeWork = () => {
 
   return (
     <section className="relative py-20 overflow-hidden bg-white">
+        <img 
+          src="/assets/images/howWe.webp" 
+          alt="" 
+          className='absolute right-0 bottom-0' 
+       
+        />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <span className="text-yellow-500 font-semibold uppercase tracking-wider">
-            OUR PROCESS
-          </span>
+         
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
             How We Work <span className="text-yellow-500">Together</span> ?
           </h2>
@@ -47,10 +64,10 @@ const HowWeWork = () => {
           {/* Center Number */}
       
           <div className="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="text-[120px] font-bold text-yellow-500/10">
+            <div className="text-[120px] font-sans font-bold text-yellow-500/50 hidden xl:block">
               04
             </div>
-            <div className="text-center text-gray-600 mt-2">
+            <div className="text-center font-bold text-gray-600 text-3xl  ">
               STEPS
             </div>
           </div>
@@ -88,14 +105,7 @@ const HowWeWork = () => {
         </div>
 
         {/* Bottom Link */}
-        <div className="text-center mt-12">
-          <a href="#consultation" className="inline-flex items-center text-yellow-500 hover:text-yellow-600">
-            Ready To Start Your Project? <span className="ml-2">Free consultation & Quote</span>
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+       
       </div>
     </section>
   );
