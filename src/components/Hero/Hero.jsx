@@ -125,11 +125,11 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      {/* <div className="hero_slider-nav absolute   top-[26.5rem]  transform  flex flex-col space-y-4 z-10" /> */}
       </div>
 
       {/* Vertical Navigation */}
 
-      <div className="hero_slider-nav absolute right-5 top-[26.5rem]  transform  translate-y-1/2 flex flex-col space-y-4 z-10" />
       {/* Thumbnails Slider */}
       <div className="absolute bottom-8 left-0 right-0 z-30">
         <div className="container mx-auto px-4">
