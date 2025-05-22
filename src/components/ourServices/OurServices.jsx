@@ -1,17 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaHotel, FaHardHat, FaTools, FaTruck, FaUsers, FaBoxes } from 'react-icons/fa';
 
 const OurServices = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   const services = [
     {
       title: "Site Support Services",
-      description: "Comprehensive site support solutions including modern accommodation, professional catering, and recreational facilities for your workforce.",
+      description: "Comprehensive site support solutions including modern accommodation, professional catering.",
       features: [
-        "Professional catering services with diverse menu options",
-        "Comfortable accommodation facilities",
-        "Recreation areas with entertainment options"
+        "Professional catering  ",
+        "Comfortable accommodation",
+        "Recreation areas",
+        "entertainment options",
       ],
       icon: <FaHotel className="w-16 h-16 text-yellow-500" />
     },
@@ -27,7 +31,7 @@ const OurServices = () => {
       icon: <FaHardHat className="w-16 h-16 text-yellow-500" />
     },
     {
-      title: "Construction Supervision & Project Management",
+      title: "Construction Supervision",
       description: "Expert oversight and management of construction projects from inception to completion.",
       features: [
         "Quality control",
@@ -72,6 +76,8 @@ const OurServices = () => {
     }
   ];
 
+  const displayedServices = isHomePage ? services.slice(0, 3) : services;
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -85,7 +91,7 @@ const OurServices = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {displayedServices.map((service, index) => (
             <motion.div
            
               key={index}
@@ -95,7 +101,7 @@ const OurServices = () => {
               className="bg-white rounded overflow-hidden border shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               <div className="flex items-center justify-center py-8 bg-gray-50 bg-yellow-500/10 transition-colors duration-300">
-                <div className="transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                <div className="transform group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white p-5 rounded-full transition-transform duration-300">
                   {service.icon}
                 </div>
               </div>
@@ -109,9 +115,9 @@ const OurServices = () => {
                 <p className="text-gray-600 mb-4 relative">
                   {service.description}
                 </p>
-                <ul className="space-y-2 mb-6 relative">
+                <ul className="space-y-2 mb-6 flex flex-wrap relative">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <li key={idx} className="flex items-center  text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       <svg className="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
@@ -120,11 +126,9 @@ const OurServices = () => {
                   ))}
                 </ul>
                 <Link
-                  style={{
-                    clipPath: "polygon(10% 0%, 100% 0%, 89% 100%, 0% 100%)",
-                  }}
+                 
                   to="/contact"
-                  className="inline-block w-full text-center py-3 px-6  bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors duration-300 relative"
+                  className="inline-block w-full text-center py-3 px-6  bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300 relative"
                 >
                   Request Service
                 </Link>
@@ -132,6 +136,17 @@ const OurServices = () => {
             </motion.div>
           ))}
         </div>
+
+        {isHomePage && (
+          <div className="text-center mt-12">
+            <Link
+              to="/services"
+              className="inline-block py-3 px-8 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300"
+            >
+              View All Services
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
