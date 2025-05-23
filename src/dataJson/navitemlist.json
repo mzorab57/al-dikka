@@ -10,24 +10,12 @@
     },
     {
       "title": "Services",
-      "link": "/Services"
+      "link": "/services"
     },
     {
-      "title": "Pages",
-      "link": "#",
-      "children": [
-        {
-          "title": "PROJECTS",
-          "link": "/pages/projects",
-          "key": "mattschool"
-        },
-        {
-          "title": "FAQ",
-          "link": "/pages/FAQ",
-          "key": "mattfurnishing"
-        }
-       
-      ]
+      "title": "Projects",
+      "link": "/projects"
+  
     },
     {
       "title": "Contact",

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHotel, FaHardHat, FaTools, FaTruck, FaUsers, FaBoxes } from 'react-icons/fa';
 
 const OurServices = () => {
   const location = useLocation();
@@ -9,6 +8,7 @@ const OurServices = () => {
 
   const services = [
     {
+      id:0,
       title: "Site Support Services",
       description: "Comprehensive site support solutions including modern accommodation, professional catering.",
       features: [
@@ -17,10 +17,11 @@ const OurServices = () => {
         "Recreation areas",
         "entertainment options",
       ],
-      icon: <FaHotel className="w-16 h-16 text-yellow-500" />
+      image: "/assets/images/services/siteSuport/sitSuport.jpg"
     },
     {
-      title: "Civil and Structural Engineering Design",
+      id:1,
+      title: "Civil Engineering Design",
       description: "Comprehensive engineering design services for buildings, infrastructure, and industrial facilities.",
       features: [
         "Architectural design",
@@ -28,9 +29,10 @@ const OurServices = () => {
         "Infrastructure planning",
         "Technical documentation"
       ],
-      icon: <FaHardHat className="w-16 h-16 text-yellow-500" />
+      image: "/assets/images/services/serviceBg.jpg"
     },
     {
+      id:2,
       title: "Construction Supervision",
       description: "Expert oversight and management of construction projects from inception to completion.",
       features: [
@@ -39,9 +41,10 @@ const OurServices = () => {
         "Safety compliance",
         "Progress monitoring"
       ],
-      icon: <FaTools className="w-16 h-16 text-yellow-500" />
+      image: "/assets/images/services/serviceBg.jpg"
     },
     {
+      id:3,
       title: "Equipment Supply and Rental",
       description: "Wide range of construction and industrial equipment available for rent or purchase.",
       features: [
@@ -50,9 +53,10 @@ const OurServices = () => {
         "Equipment maintenance",
         "Technical support"
       ],
-      icon: <FaTruck className="w-16 h-16 text-yellow-500" />
+      image: "/assets/images/services/serviceBg.jpg"
     },
     {
+      id:4,
       title: "Iraqi Manpower Operation",
       description: "Skilled workforce solutions for construction and engineering projects.",
       features: [
@@ -61,9 +65,10 @@ const OurServices = () => {
         "Training programs",
         "Workforce management"
       ],
-      icon: <FaUsers className="w-16 h-16 text-yellow-500" />
+      image: "/assets/images/services/serviceBg.jpg"
     },
     {
+      id:5,
       title: "General Trading and Logistics",
       description: "Comprehensive trading and logistics support for construction projects.",
       features: [
@@ -72,7 +77,7 @@ const OurServices = () => {
         "Import/Export services",
         "Inventory management"
       ],
-      icon: <FaBoxes className="w-16 h-16 text-yellow-500" />
+      image: "/assets/images/services/serviceBg.jpg"
     }
   ];
 
@@ -85,39 +90,39 @@ const OurServices = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Our <span className="text-yellow-500">Services</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-xl mx-auto">
             Comprehensive construction and engineering solutions tailored to meet your project needs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1  gap-10 max-w-6xl mx-auto">
           {displayedServices.map((service, index) => (
             <motion.div
-           
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded overflow-hidden border shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className={`${index === 0  ? 'lg:lg:flex-row flex items-center flex-col': 'flex lg:flex-row  items-center flex-col'}  bg-white rounded overflow-hidden  transition-all duration-300 `}
             >
-              <div className="flex items-center justify-center py-8 bg-gray-50 bg-yellow-500/10 transition-colors duration-300">
-                <div className="transform group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white p-5 rounded-full transition-transform duration-300">
-                  {service.icon}
-                </div>
-              </div>
-
-              <div className="p-6 relative overflow-hidden">
-                <div className="absolute -right-20 -bottom-20 w-40 h-40 bg-yellow-500/5 rounded-full group-hover:scale-150 transition-transform duration-500" />
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-3 relative">
+              <div className="relative  lg:w-1/2 w-full h-[25rem] overflow-hidden bg-gradient-to-b group from-blue-700 via-blue-400 to-white pt-1 px-1">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0  transition-colors duration-300" />
+                <h3 className="absolute bottom-10 left-4  text-xl font-bold text-white bg-gradient-to-r from-black/50 to translate-x-0 rounded-full pl-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4 relative">
+              </div>
+
+              <div className="p-6 pb-0 relative w-full max-w-lg">
+                <p className="text-gray-800 text-2xl font-semibold  mb-4">
                   {service.description}
                 </p>
-                <ul className="space-y-2 mb-6 flex flex-wrap relative">
+                <ul className="space-y-2 mb-6 text-xl">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center  text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <li key={idx} className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       <svg className="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       </svg>
@@ -126,9 +131,8 @@ const OurServices = () => {
                   ))}
                 </ul>
                 <Link
-                 
                   to="/contact"
-                  className="inline-block w-full text-center py-3 px-6  bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300 relative"
+                  className="inline-block w-fit text-center py-2 px-10 hover:bg-black border   border-black text-black hover:text-white font-semibold rounded  transition-colors duration-300"
                 >
                   Request Service
                 </Link>
@@ -141,7 +145,7 @@ const OurServices = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-block py-3 px-8 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300"
+              className="inline-block py-2 px-8 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300"
             >
               View All Services
             </Link>

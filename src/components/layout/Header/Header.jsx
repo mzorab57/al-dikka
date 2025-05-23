@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full z-50 transition-all font-serif text-xl duration-300  ${
+      className={`fixed w-full z-50 transition-all  text-xl duration-300  ${
         isSticky ? "shadow-md bg-white text-gray-800 " : "text-white"
       }`}
     >

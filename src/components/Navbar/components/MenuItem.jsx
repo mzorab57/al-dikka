@@ -29,7 +29,7 @@ const MenuItem = ({ item }) => {
   };
 
   return (
-    <li className="font-raleway  font-medium group py-5 relative h-full">
+    <li className=" group py-5 relative h-full">
       {item.children ? (
         <>
           <span className="cursor-pointer h-full flex items-center px-4 hover:text-primary transition-colors duration-300">
