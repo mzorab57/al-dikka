@@ -8,7 +8,7 @@ const OurSiteSuport = () => {
         id: 1,
         title: "Professional Catering Services",
         category: ["Services", "Catering"],
-        image: "/assets/images/bgHome/bg1.jpg",
+        image: "/assets/images/services/siteSuport/site (56).jpg",
         link: "/services/catering",
         size: "2x",
         description: "Diverse menu options tailored to your workforce needs"
@@ -17,7 +17,7 @@ const OurSiteSuport = () => {
         id: 2,
         title: "Comfortable Accommodation",
         category: ["Services", "Accommodation"],
-        image: "/assets/images/bgHome/bg3.jpg",
+        image: "/assets/images/services/siteSuport/site (10).jpg",
         link: "/services/accommodation",
         description: "Modern and comfortable living spaces for your team"
       },
@@ -25,7 +25,7 @@ const OurSiteSuport = () => {
         id: 3,
         title: "Recreation Facilities",
         category: ["Services", "Recreation"],
-        image: "/assets/images/bgHome/bg4.jpg",
+        image: "/assets/images/services/siteSuport/site (3).jpg",
         link: "/services/recreation",
         description: "Entertainment and relaxation areas for workforce"
       },
@@ -33,7 +33,7 @@ const OurSiteSuport = () => {
         id: 4,
         title: "Comfortable Accommodation",
         category: ["Services", "Accommodation"],
-        image: "/assets/images/bgHome/bg4.jpg",
+        image: "/assets/images/services/siteSuport/site (32).jpg",
         link: "/services/accommodation",
         description: "Modern and comfortable living spaces for your team"
       },
@@ -41,7 +41,7 @@ const OurSiteSuport = () => {
         id: 5,
         title: "Recreation Facilities",
         category: ["Services", "Recreation"],
-        image: "/assets/images/bgHome/bg5.jpg",
+        image: "/assets/images/services/siteSuport/site (35).jpg",
         link: "/services/recreation",
         description: "Entertainment and relaxation areas for workforce"
       }
@@ -116,6 +116,14 @@ const OurSiteSuport = () => {
           </div>
         ))}
       </div>
+        <Link 
+          to="/site-support" 
+          className="flex items-center w-full max-w-full  justify-center bg-white hover:bg-gray-50 transition-colors duration-300 p-8 cursor-pointer group"
+        >
+          <div className="text-center">
+            <span className="text-xl font-semibold text-blue-800 border-2 border-black/50 rounded p-2 group-hover:text-primary transition-colors duration-300">View More Site Support</span>
+          </div>
+        </Link>
     </section>
   );
 };

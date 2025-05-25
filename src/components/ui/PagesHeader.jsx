@@ -11,7 +11,7 @@ const PagesHeader = ({img, title}) => {
         }}
           src={img}
           alt="background"
-          className=" object-cover  bg-cover  brightness-50  h-[700px] w-full"
+          className=" object-cover  bg-cover  brightness-75  h-[700px] w-full"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center ">
           {/* <h2 className="text-3xl lg:text-4xl text-white  font-jost">

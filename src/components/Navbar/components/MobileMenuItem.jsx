@@ -22,9 +22,9 @@ const MobileMenuItem = ({
   };
 
   return (
-    <li className="font-raleway">
+    <li className="font-raleway text-gray-600">
       {item.children ? (
-        <div className="border-b border-gray-600 text-xl font-medium text-gray-200">
+        <div className=" text-xl font-medium">
           <button
             onClick={() => toggleSubmenu(item.title)}
             className="w-full px-4 py-3 flex items-center justify-between  hover:text-primary"
@@ -52,7 +52,7 @@ const MobileMenuItem = ({
                 <li key={child.title} data-aos="fade-left" data-aos-delay={index * 100} data-aos-duration="400">
                   <Link
                     to={child.link}
-                    className="block px-8 py-2 text-gray-200 hover:text-primary"
+                    className="block px-8 py-2  hover:text-primary"
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                       onClose();
@@ -68,7 +68,7 @@ const MobileMenuItem = ({
       ) : (
         <Link
           to={item.link}
-          className="block px-4 py-3 text-xl font-medium text-gray-200 hover:text-primary/70 border-b border-gray-600"
+          className="block px-4 py-3 text-xl font-medium  hover:text-primary/70 "
           onClick={handleClick}
         >
           {item.title}

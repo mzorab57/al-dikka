@@ -17,7 +17,7 @@ const OurServices = () => {
         "Recreation areas",
         "entertainment options",
       ],
-      image: "/assets/images/services/siteSuport/sitSuport.jpg"
+      image: "/assets/images/services/siteSuport/site (22).jpg"
     },
     {
       id:1,
@@ -41,7 +41,7 @@ const OurServices = () => {
         "Safety compliance",
         "Progress monitoring"
       ],
-      image: "/assets/images/services/serviceBg.jpg"
+      image: "/assets/images/projects/crane/crane5.jpg"
     },
     {
       id:3,
@@ -53,7 +53,7 @@ const OurServices = () => {
         "Equipment maintenance",
         "Technical support"
       ],
-      image: "/assets/images/services/serviceBg.jpg"
+       image: "/assets/images/projects/maintenansCrane/mcrane3.jpg"
     },
     {
       id:4,
@@ -65,7 +65,7 @@ const OurServices = () => {
         "Training programs",
         "Workforce management"
       ],
-      image: "/assets/images/services/serviceBg.jpg"
+  image: "/assets/images/projects/powerPlanet/amarah/amarah1.jpg"
     },
     {
       id:5,
@@ -77,7 +77,7 @@ const OurServices = () => {
         "Import/Export services",
         "Inventory management"
       ],
-      image: "/assets/images/services/serviceBg.jpg"
+       image: "/assets/images/projects/powerPlanet/kirkuk/kPowerPlanet11.jpg"
     }
   ];
 

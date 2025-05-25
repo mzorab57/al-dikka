@@ -127,13 +127,12 @@ const OurStory = () => {
 
   const images = [
     "/assets/images/about.jpg",
-    "/assets/images/bgHome/bg2.jpg",
-    "/assets/images/bgHome/bg3.jpg",
-    "/assets/images/bgHome/bg4.jpg",
-    "/assets/images/bgHome/bg4.jpg",
-    "/assets/images/bgHome/bg3.jpg",
-    "/assets/images/bgHome/bg2.jpg",
-    "/assets/images/about.jpg",
+    "/assets/images/projects/powerPlanet/amarah/amarah1.jpg",
+    "/assets/images/projects/powerPlanet/basra/basra1.jpg",
+    "/assets/images/projects/powerPlanet/khurmala/khurmala1.jpg",
+    "/assets/images/projects/powerPlanet/kirkuk/kPowerPlanet16.jpg",
+    "/assets/images/projects/powerPlanet/upgKirkuk/upgKirkuk20.jpg",
+   
   ];
 
   return (

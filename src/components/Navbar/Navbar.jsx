@@ -29,7 +29,7 @@ const Navbar = ({isSticky}) => {
   };
 
   return (
-    <nav className="relative ">
+    <nav className="relative  ">
       <div className="container mx-auto px-4  ">
         <div className="flex items-center justify-between py-1 ">
           {/* Logo */}
@@ -39,7 +39,7 @@ const Navbar = ({isSticky}) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden  md:block">
-            <ul className="flex space-x-4">
+            <ul className="flex  space-x-4">
               {navitemlist.map((item, index) => (
                 
                 <MenuItem  item={item}  />
@@ -83,8 +83,8 @@ const Navbar = ({isSticky}) => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden py-10 backdrop-blur-2xl " data-aos="fade-down">
+        {isMobileMenuOpen &&  (
+          <nav className="md:hidden py-10  bg-white " data-aos="fade-down">
             <ul className="space-y-2">
               {navitemlist.map((item, index) => (
                 <MobileMenuItem

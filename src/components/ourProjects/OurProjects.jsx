@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 const OurProjects = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -139,27 +140,30 @@ const OurProjects = () => {
       category: "Power Plant",
       images: ["/assets/images/bgHome/bg3.jpg", "/assets/images/bgHome/bg2.jpg", "/assets/images/bgHome/bg3.jpg", "/assets/images/bgHome/bg4.jpg"]
     },
-    {
-      title: "Industrial Complex Development",
-      description: "State-of-the-art industrial facility with modern infrastructure",
-      features: [
-        "Modern infrastructure",
-        "Facility planning",
-        "Construction management",
-        "Technical implementation"
-      ],
-      date: "2023",
-      location: "Baghdad",
-      category: "Construction",
-      images: ["/assets/images/bgHome/bg2.jpg", "/assets/images/bgHome/bg2.jpg", "/assets/images/bgHome/bg3.jpg", "/assets/images/bgHome/bg4.jpg"]
-    }
+    // {
+    //   title: "Industrial Complex Development",
+    //   description: "State-of-the-art industrial facility with modern infrastructure",
+    //   features: [
+    //     "Modern infrastructure",
+    //     "Facility planning",
+    //     "Construction management",
+    //     "Technical implementation"
+    //   ],
+    //   date: "2023",
+    //   location: "Baghdad",
+    //   category: "Construction",
+    //   images: ["/assets/images/bgHome/bg2.jpg", "/assets/images/bgHome/bg2.jpg", "/assets/images/bgHome/bg3.jpg", "/assets/images/bgHome/bg4.jpg"]
+    // }
   ];
 
-  const categories = ['all', 'Equipment Maintenance', 'Power Plant', 'Logistics', 'Construction'];
+  const categories = ['all', 'Equipment Maintenance', 'Power Plant', 'Logistics'];
 
   const filteredProjects = selectedCategory === 'all' 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
+
+  // Add safety check for empty projects
+  const currentProject = filteredProjects[currentSlide] || projects[0];
 
   const CustomNextArrow = (props) => (
     <button
@@ -239,7 +243,6 @@ const OurProjects = () => {
   return (
     <section
       id="our-projects"
-      // style={{ backgroundImage: 'url("/assets/images/shape4.jpg")' }}
       className="relative py-20 overflow-hidden bg-black"
     >
       <img src="/assets/images/shape1.png" className='absolute hidden lg:block -right-5 top-0 rotate-90 brightness-50' />
@@ -253,52 +256,56 @@ const OurProjects = () => {
             className="w-full lg:w-1/2"
           >
             <div className="rounded overflow-hidden ">
-              <Slider 
-                {...sliderSettings} 
-                className="w-full"
-                ref={slider => setMainSlider(slider)}
-              >
-                {filteredProjects.map((project, index) => (
-                  <div key={index} className="relative w-full">
-                    <img
-                      src={project.images[0]}
-                      alt={project.title}
-                      className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
-                      // style={{
-                      //   clipPath: "polygon(10% 0%, 100% 0%, 89% 100%, 0% 100%)",
-                      // }}
-                    />
-                    
-                  </div>
-                ))}
-              </Slider>
-              
-              <div className="mt-8 w-full">
-                <Slider 
-                  {...thumbnailSettings} 
-                  className="w-full"
-                  ref={slider => setThumbnailSlider(slider)}
-                >
-                  {filteredProjects.map((project, index) => (
-                    <div 
-                      key={index} 
-                      className="px-1 sm:px-2"
-                      onClick={() => {
-                        setCurrentSlide(index);
-                        if (mainSlider) mainSlider.slickGoTo(index);
-                        if (thumbnailSlider) thumbnailSlider.slickGoTo(index);
-                      }}
+              {filteredProjects.length > 0 ? (
+                <>
+                  <Slider 
+                    {...sliderSettings} 
+                    className="w-full"
+                    ref={slider => setMainSlider(slider)}
+                  >
+                    {filteredProjects.map((project, index) => (
+                      <div key={index} className="relative w-full">
+                        <img
+                          src={project.images[0]}
+                          alt={project.title}
+                          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                  
+                  <div className="mt-8 w-full">
+                    <Slider 
+                      {...thumbnailSettings} 
+                      className="w-full"
+                      ref={slider => setThumbnailSlider(slider)}
                     >
-                      <img
-                        src={project.images[0]}
-                        alt={`Thumbnail ${index + 1}`}
-                        className={`w-full h-28 object-cover rounded cursor-pointer transition-all duration-300 
-                          ${currentSlide === index ? 'opacity-100 border-yellow-500' : 'opacity-75 hover:opacity-100'}`}
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+                      {filteredProjects.map((project, index) => (
+                        <div 
+                          key={index} 
+                          className="px-1 sm:px-2"
+                          onClick={() => {
+                            setCurrentSlide(index);
+                            if (mainSlider) mainSlider.slickGoTo(index);
+                            if (thumbnailSlider) thumbnailSlider.slickGoTo(index);
+                          }}
+                        >
+                          <img
+                            src={project.images[0]}
+                            alt={`Thumbnail ${index + 1}`}
+                            className={`w-full h-28 object-cover rounded cursor-pointer transition-all duration-300 
+                              ${currentSlide === index ? 'opacity-100 border-yellow-500' : 'opacity-75 hover:opacity-100'}`}
+                          />
+                        </div>
+                      ))}
+                    </Slider>
+                  </div>
+                </>
+              ) : (
+                <div className="flex items-center justify-center h-[400px] bg-gray-900 text-white">
+                  No projects available for this category
+                </div>
+              )}
             </div>
           </motion.div>
 
@@ -318,7 +325,10 @@ const OurProjects = () => {
               {categories.map(category => (
                 <button
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    setCurrentSlide(0); // Reset slide index when changing category
+                  }}
                   className={`px-6 py-2 rounded transition-all duration-300 ${
                     selectedCategory === category
                       ? 'bg-yellow-500 text-white'
@@ -331,16 +341,16 @@ const OurProjects = () => {
             </div>
 
             {/* Project Details */}
-            {filteredProjects.length > 0 && (
+            {filteredProjects.length > 0 ? (
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-yellow-500">
-                  {filteredProjects[currentSlide].title}
+                  {currentProject.title}
                 </h3>
                 <p className="text-lg text-neutral-400 leading-relaxed">
-                  {filteredProjects[currentSlide].description}
+                  {currentProject.description}
                 </p>
                 <div className="grid grid-cols-2 gap-4">
-                  {filteredProjects[currentSlide].features.map((feature, index) => (
+                  {currentProject.features.map((feature, index) => (
                     <div 
                       key={index}
                       className="flex items-center text-neutral-400 space-x-2"
@@ -351,15 +361,20 @@ const OurProjects = () => {
                   ))}
                 </div>
                 <div className="flex justify-between text-neutral-400 mt-6">
-                  <span>Location: {filteredProjects[currentSlide].location}</span>
-                  <span>Date: {filteredProjects[currentSlide].date}</span>
+                  <span>Location: {currentProject.location}</span>
+                  <span>Date: {currentProject.date}</span>
                 </div>
               </div>
+            ) : (
+              <div className="text-neutral-400">
+                No project details available for this category
+              </div>
             )}
-          <div className='text-white border w-fit px-3 py-1 border-yellow-300 flex items-center gap-2 cursor-pointer hover:bg-yellow-300 hover:text-black transition-all'>
-            View All Projects
-            <MdKeyboardArrowRight className="text-xl" />
-          </div>
+
+            <Link to={'/projects'} onClick={() => window.scrollTo(0, 0)} className='text-white border w-fit px-3 py-1 border-yellow-300 flex items-center gap-2 cursor-pointer hover:bg-yellow-300 hover:text-black transition-all'>
+              View All Projects
+              <MdKeyboardArrowRight className="text-xl" />
+            </Link>
           </motion.div>
         </div>
       </div>

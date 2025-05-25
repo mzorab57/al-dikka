@@ -20,6 +20,7 @@ import Service from "../pages/Service";
 import OurStory from "../components/ourStory/OurStory";
 import CoreValues from "../components/coreValues/CoreValues";
 import Projects from "../pages/Projects";
+import SiteSuport from "../pages/SiteSuport";
 
 const ErrorElement = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -47,6 +48,7 @@ const Router = () => {
         <Route path="services" element={<Service />} />
         
           <Route path="projects" element={<Projects />} />
+          <Route path="site-support" element={<SiteSuport />} />
         
         <Route path="contact" element={<Contact />} />
       </Route>
