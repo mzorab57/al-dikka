@@ -9,12 +9,22 @@ const Contact = lazy(() => import("../pages/Contact"));
 const Service = lazy(() => import("../pages/Service"));
 const SiteSuport = lazy(() => import("../pages/SiteSuport"));
 
-// Import components used in home page
-import Hero from "../components/Hero/Hero";
-import OurSiteSuport from "../components/siteSuport/OurSiteSuport";
-import OurServices from "../components/ourServices/OurServices";
-import OurProjects from "../components/ourProjects/OurProjects";
-import OurLocation from "../components/location/OurLocation";
+// Lazy load home page components
+const Hero = lazy(() => import("../components/Hero/Hero"));
+const OurSiteSuport = lazy(() => import("../components/siteSuport/OurSiteSuport"));
+const OurServices = lazy(() => import("../components/ourServices/OurServices"));
+const OurProjects = lazy(() => import("../components/ourProjects/OurProjects"));
+const OurLocation = lazy(() => import("../components/location/OurLocation"));
+const AboutUs = lazy(() => import('../components/aboutUs/AboutUs'));
+const CoreValues = lazy(() => import('../components/coreValues/CoreValues'));
+const OurStory = lazy(() => import('../components/ourStory/OurStory'));
+const HowWeWork = lazy(() => import('../components/howWeWork/HowWeWork'));
+
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-yellow-500"></div>
+  </div>
+);
 
 const ErrorElement = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -39,19 +49,22 @@ const Router = () => {
       <Route path="/" element={<Main />}>
         <Route index element={
           <>
-            <Hero />
-            <Suspense fallback={<div>Loading...</div>}><About /></Suspense>
-            <OurSiteSuport />
-            <OurServices />
-            <OurProjects />
-            <OurLocation />
+            <Suspense fallback={<LoadingSpinner />}><Hero /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><AboutUs /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><OurStory /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><CoreValues /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><HowWeWork /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><OurSiteSuport /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><OurServices /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><OurProjects /></Suspense>
+            <Suspense fallback={<LoadingSpinner />}><OurLocation /></Suspense>
           </>
         } />
-        <Route path="about" element={<Suspense fallback={<div>Loading...</div>}><About /></Suspense>} />
-        <Route path="contact" element={<Suspense fallback={<div>Loading...</div>}><Contact /></Suspense>} />
-        <Route path="services" element={<Suspense fallback={<div>Loading...</div>}><Service /></Suspense>} />
-        <Route path="projects" element={<Suspense fallback={<div>Loading...</div>}><Projects /></Suspense>} />
-        <Route path="site-support" element={<Suspense fallback={<div>Loading...</div>}><SiteSuport /></Suspense>} />
+        <Route path="about" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
+        <Route path="contact" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
+        <Route path="services" element={<Suspense fallback={<LoadingSpinner />}><Service /></Suspense>} />
+        <Route path="projects" element={<Suspense fallback={<LoadingSpinner />}><Projects /></Suspense>} />
+        <Route path="site-support" element={<Suspense fallback={<LoadingSpinner />}><SiteSuport /></Suspense>} />
         <Route path="*" element={<ErrorElement />} />
       </Route>
     </Routes>

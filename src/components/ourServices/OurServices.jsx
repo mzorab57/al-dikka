@@ -104,7 +104,7 @@ const OurServices = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`${index === 0  ? 'lg:lg:flex-row flex items-center flex-col': 'flex lg:flex-row  items-center flex-col'}  bg-white rounded overflow-hidden  transition-all duration-300 `}
             >
-              <div className="relative  lg:w-1/2 w-full h-[25rem] overflow-hidden bg-gradient-to-b group from-blue-700 via-blue-400 to-white pt-1 px-1">
+              <div className="relative  lg:w-1/2 w-full h-[25rem] overflow-hidden bg-gradient-to-b group from-yellow-600 via-yellow-300 to-white pt-1 px-1">
                 <img 
                   src={service.image} 
                   alt={service.title}
@@ -145,7 +145,7 @@ const OurServices = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-block py-2 px-8 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300"
+              className="inline-block w-full lg:w-fit py-2 px-8 bg-yellow-500 text-white font-semibold rounded hover:bg-yellow-600 transition-colors duration-300"
             >
               View All Services
             </Link>

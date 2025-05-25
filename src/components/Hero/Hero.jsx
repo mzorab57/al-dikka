@@ -104,18 +104,18 @@ const Hero = () => {
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-full flex items-center">
+              <div className="relative h-full flex justify-center items-center">
                 <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center">
-                  <div className="max-w-3xl text-center  p-8 rounded-lg">
-                    <h2 className="text-gray-300 uppercase text-4xl md:text-7xl font-semibold mb-6 drop-shadow-lg">
+                  <div className="max-w-3xl text-center     rounded-lg">
+                    <h2 className="text-gray-300 uppercase text-4xl md:text-7xl font-semibold mb-2 drop-shadow-lg">
                     Engineering Iraq's Future
                     </h2>
-                    <p className="text-gray-300 uppercase text-base md:text-lg mb-8 drop-shadow-md">
+                    <p className="text-gray-300 w-full place-self-center max-w-xl uppercase text-base md:text-lg  drop-shadow-md">
                     From Design to Delivery - Your Trusted Partner in Engineering Excellence
                     </p>
                     <a
                       href="single-service.html"
-                      className="inline-block p-[2px] bg-yellow-400 border uppercase border-yellow-400 hover:bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
+                      className="inline-block p-[2px] bg-yellow-400 border uppercase border-yellow-400 hover:bg-yellow-500 text-white b0 px-5 py-2 rounded  transition-colors  text-x shadow-lg"
                     >
                       Service Details
                     </a>
