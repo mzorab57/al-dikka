@@ -115,7 +115,7 @@ const Hero = () => {
                     </p>
                     <a
                       href="single-service.html"
-                      className="inline-block p-[2px] bg-yellow-400/20 border uppercase border-yellow-400 hover:bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
+                      className="inline-block p-[2px] bg-yellow-400 border uppercase border-yellow-400 hover:bg-yellow-500 text-white b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
                     >
                       Service Details
                     </a>

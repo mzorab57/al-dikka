@@ -1,26 +1,20 @@
-import React from "react";
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Main from "../components/layout/Main";
 
-// Pages
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import MattSchool from "../pages/pages/MattSchool";
-import MattFurnishing from "../pages/pages/MattFurnishing";
-import MattModel from "../pages/pages/MattModel";
+// Lazy load page components
+const Projects = lazy(() => import("../pages/Projects"));
+const About = lazy(() => import("../pages/About"));
+const Contact = lazy(() => import("../pages/Contact"));
+const Service = lazy(() => import("../pages/Service"));
+const SiteSuport = lazy(() => import("../pages/SiteSuport"));
+
+// Import components used in home page
 import Hero from "../components/Hero/Hero";
-import AboutUs from "../components/aboutUs/AboutUs";
 import OurSiteSuport from "../components/siteSuport/OurSiteSuport";
-import HowWeWork from "../components/howWeWork/HowWeWork";
 import OurServices from "../components/ourServices/OurServices";
 import OurProjects from "../components/ourProjects/OurProjects";
 import OurLocation from "../components/location/OurLocation";
-import Service from "../pages/Service";
-import OurStory from "../components/ourStory/OurStory";
-import CoreValues from "../components/coreValues/CoreValues";
-import Projects from "../pages/Projects";
-import SiteSuport from "../pages/SiteSuport";
 
 const ErrorElement = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -43,16 +37,23 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />}>
-        <Route index element={<><Hero /> <AboutUs /><OurStory /><CoreValues />  <OurSiteSuport /> <HowWeWork /> <OurServices /> <OurProjects/> <OurLocation /></>} />
-        <Route path="about" element={<About />} />
-        <Route path="services" element={<Service />} />
-        
-          <Route path="projects" element={<Projects />} />
-          <Route path="site-support" element={<SiteSuport />} />
-        
-        <Route path="contact" element={<Contact />} />
+        <Route index element={
+          <>
+            <Hero />
+            <Suspense fallback={<div>Loading...</div>}><About /></Suspense>
+            <OurSiteSuport />
+            <OurServices />
+            <OurProjects />
+            <OurLocation />
+          </>
+        } />
+        <Route path="about" element={<Suspense fallback={<div>Loading...</div>}><About /></Suspense>} />
+        <Route path="contact" element={<Suspense fallback={<div>Loading...</div>}><Contact /></Suspense>} />
+        <Route path="services" element={<Suspense fallback={<div>Loading...</div>}><Service /></Suspense>} />
+        <Route path="projects" element={<Suspense fallback={<div>Loading...</div>}><Projects /></Suspense>} />
+        <Route path="site-support" element={<Suspense fallback={<div>Loading...</div>}><SiteSuport /></Suspense>} />
+        <Route path="*" element={<ErrorElement />} />
       </Route>
-      <Route path="*" element={<ErrorElement />} />
     </Routes>
   );
 };
