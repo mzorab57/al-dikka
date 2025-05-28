@@ -118,10 +118,26 @@ const OurSiteSuport = () => {
       </div>
         <Link 
           to="/site-support" 
-          className="flex items-center w-full max-w-full  justify-center bg-white hover:bg-gray-50 transition-colors duration-300 p-8 cursor-pointer group"
+          className="flex items-center justify-center w-full py-12 mt-8 group"
         >
-          <div className="text-center">
-            <span className="text-xl font-semibold text-blue-800 border-2 border-black/50 rounded p-2 group-hover:text-primary transition-colors duration-300">View More Site Support</span>
+          <div className="relative inline-block">
+            <span className="inline-flex items-center px-8 py-4 text-xl font-semibold text-white bg-yellow-500 rounded transition-all duration-300 hover:bg-yellow-900 hover:shadow-lg">
+              View More Site Support
+              <svg 
+                className="w-6 h-6 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                />
+              </svg>
+            </span>
+            <div className="absolute -inset-1 bg-yellow-800/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         </Link>
     </section>

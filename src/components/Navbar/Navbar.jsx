@@ -34,7 +34,7 @@ const Navbar = ({isSticky}) => {
         <div className="flex items-center justify-between py-1 ">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/assets/images/alDikkaLogo.png" alt="Logo" className="h-16 w-20" />
+            <img src="/assets/images/alDikkaLogo.png" alt="Logo" className="h-16 w-20 lg:h-24 lg:w-28 scale-105 py-1" />
           </Link>
 
           {/* Desktop Navigation */}

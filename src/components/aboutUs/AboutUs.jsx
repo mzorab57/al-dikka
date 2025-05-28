@@ -1,7 +1,12 @@
 import React from "react";
 import CoreValues from "../coreValues/CoreValues";
+import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <section className="relative py-16 overflow-hidden ">
       {/* Background Image */}
@@ -18,7 +23,6 @@ const AboutUs = () => {
       <div className="container mx-auto px-4 relative z-10 py-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 relative">
-
             <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 mb-6">
               About Al-Dikka Engineering
             </h1>
@@ -26,19 +30,19 @@ const AboutUs = () => {
               Established in 2004, we are a leading multidisciplinary
               engineering firm in Iraq
             </p>
-            <a
-              href="single-service.html"
-              className="inline-block p-[2px]   bg-yellow-400/20 border border-yellow-400 hover:bg-yellow-400 text-gray-800 b0 px-8 py-3 rounded  transition-colors  text-x shadow-lg"
-            >
-              More About
-            </a>
+            {isHomePage && (
+              <Link
+                to="/about"
+                onClick={()=> window.scrollTo(0, 0)} 
+                className="inline-block bg-yellow-400/20 border border-yellow-400 hover:bg-yellow-400 text-gray-800 px-8 py-3 rounded transition-colors shadow-lg"
+              >
+                More About
+              </Link>
+            )}
           </div>
           {/* Globe Image with Gradient */}
           <div className="lg:w-1/2 relative">
-            {/* Glow effect */}
-            {/* <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/30 via-yellow-100/20 to-transparent rounded-full blur-2xl -z-10" /> */}
             <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/40 via-transparent to-yellow-400/30 rounded-full transition-opacity duration-700 delay-100" />
-            {/* <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400/30 via-transparent to-blue-500/20 rounded-full transition-opacity duration-700" /> */}
             <img
               src="/assets/images/earthShape.png"
               alt="Global Presence"
@@ -47,26 +51,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-
-
-
-
-      <style jsx>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };

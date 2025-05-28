@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/thumbs";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -113,12 +114,12 @@ const Hero = () => {
                     <p className="text-gray-300 w-full place-self-center max-w-xl uppercase text-base md:text-lg  drop-shadow-md">
                     From Design to Delivery - Your Trusted Partner in Engineering Excellence
                     </p>
-                    <a
-                      href="single-service.html"
-                      className="inline-block p-[2px] bg-yellow-400 border uppercase border-yellow-400 hover:bg-yellow-500 text-white b0 px-5 py-2 rounded  transition-colors  text-x shadow-lg"
+                    <Link
+                      to="services"
+                      className="inline-block mt-8 bg-yellow-400 border uppercase border-yellow-400 hover:bg-yellow-500 text-white px-8 py-3 rounded-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl text-base font-medium tracking-wide"
                     >
-                      Service Details
-                    </a>
+                      View Services
+                    </Link>
                   </div>
                 </div>
               </div>
