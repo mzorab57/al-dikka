@@ -185,14 +185,6 @@ const SiteSuport = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center bg-blue-50 rounded-xl p-8">
-          <h3 className="text-2xl font-bold mb-4">Need Site Support Services?</h3>
-          <p className="text-gray-600 mb-6">Contact us to discuss your specific requirements and how we can help.</p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
-            Contact Us
-          </button>
-        </div>
 
       </div>
       <div className="container mx-auto px-4 py-16 bg-gray-50">
