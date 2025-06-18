@@ -117,11 +117,12 @@ const OurSiteSuport = () => {
         ))}
       </div>
         <Link 
+        onClick={() => window.scrollTo(0, 0)}
           to="/site-support" 
           className="flex items-center justify-center w-full py-12 mt-8 group"
         >
           <div className="relative inline-block">
-            <span className="inline-flex items-center px-8 py-4 text-xl font-semibold text-white bg-yellow-500 rounded transition-all duration-300 hover:bg-yellow-900 hover:shadow-lg">
+            <span className="inline-flex items-center px-4 py-2 text-xl font-semibold text-white bg-yellow-500 rounded transition-all duration-300 hover:bg-yellow-900 hover:shadow-lg">
               View More Site Support
               <svg 
                 className="w-6 h-6 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" 

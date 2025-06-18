@@ -312,6 +312,7 @@ const ProjectsPage = () => {
     //   ],
     // },
   ];
+
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -362,7 +363,7 @@ const ProjectsPage = () => {
       </div>
 
       {/* Search and Filter Section */}
-      <div className="sticky top-16 lg:top-20 z-10 bg-white py-4 mb-8">
+      <div className="sticky top-16 lg:top-20 z-10 bg-white pt-8 pb-2 ">
         <div className="container mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between items-center">
           <div className="relative w-full md:w-64">
             <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
